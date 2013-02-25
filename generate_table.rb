@@ -7,8 +7,8 @@ class NumberTable
     headings = []
     retreive_prime_numbers = []
  
-    headings = get_prime_numbers
-    table = Terminal::Table.new :headings => headings.unshift(''), :title => "Prime Numbers Multiplication Table" do |t|
+    main_headings = get_prime_numbers
+    table = Terminal::Table.new :headings => main_headings.unshift(''), :title => "Prime Numbers Multiplication Table" do |t|
       retreive_prime_numbers = get_prime_numbers 
       retreive_prime_numbers.each  do |first_field|
         row = []     
@@ -17,7 +17,7 @@ class NumberTable
           row << first_field.to_i * fill_row.to_i
         end 
         t << row
-        t << :separator unless first_field.to_i == 29   
+        t << :separator unless first_field.to_i == 29    
       end
     end 
     puts table
