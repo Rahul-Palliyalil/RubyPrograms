@@ -3,13 +3,13 @@ require 'terminal-table'
 
 class NumberTable
 
-  def generate_table
+  def get_prime_number_table
     headings = []
     retreive_prime_numbers = []
  
-    headings = generate_prime
+    headings = get_prime_numbers
     table = Terminal::Table.new :headings => headings.unshift(''), :title => "Prime Numbers Multiplication Table" do |t|
-      retreive_prime_numbers = generate_prime 
+      retreive_prime_numbers = get_prime_numbers 
       retreive_prime_numbers.each  do |first_field|
         row = []     
         row << first_field.to_i
@@ -23,7 +23,7 @@ class NumberTable
     puts table
   end
   
-  def generate_prime
+  def get_prime_numbers
     array = []
     2.upto 30 do |count|
       get_prime_number = is_prime?(count)
@@ -44,4 +44,4 @@ class NumberTable
 end
 
 
-NumberTable.new.generate_table
+NumberTable.new.get_prime_number_table
