@@ -3,7 +3,7 @@ require_relative 'generate_table'
 
 describe NumberTable do
   before do
-   @get_prime = NumberTable.new 
+   @get_prime = NumberTable.new(30) 
   end
 
   context "retreive only prime numbers" do
@@ -13,8 +13,15 @@ describe NumberTable do
     end
 
     it "should confirm the number of elements in the array returned is 10" do
-    	array = @get_prime.get_prime_numbers
+    	array = @get_prime.get_prime_numbers(30)
 	array.count.should == 10
     end	
   end
+
+  context "displays a multiplication table of prime numbers" do
+    it "should return a table" do
+      @get_prime.get_prime_number_table.should be_a(Terminal::Table)
+    end
+  end  
+
 end
