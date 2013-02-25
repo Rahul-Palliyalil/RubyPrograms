@@ -43,5 +43,6 @@ class NumberTable
   end
 end
 
-
-NumberTable.new.get_prime_number_table
+if __FILE__ == $0
+  NumberTable.new.get_prime_number_table
+end  
