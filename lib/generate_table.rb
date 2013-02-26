@@ -5,8 +5,8 @@ require 'trollop'
 
 opts = Trollop::options do
   opt :prime_numbers, "Count of prime numbers", 
-  :type => :integer, 
-  :default =>30
+      :type => :integer, 
+      :default =>30
 end
 
 
