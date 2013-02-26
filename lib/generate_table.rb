@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'terminal-table'
 require 'trollop'
 
